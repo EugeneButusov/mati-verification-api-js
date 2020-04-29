@@ -107,7 +107,7 @@ class ApiService {
    */
   public async createIdentity(metadata?: IdentityMetadata): Promise<IdentityResource> {
     const body: CreateIdentityPayload = { metadata };
-    if (this.flowId) {
+    if (this.flowId !== undefined) {
       body.flowId = this.flowId;
     }
     return this.callHttp({
